@@ -1,0 +1,24 @@
+{
+  "name": "dbwebapplication",
+  "version": "1.0.0",
+  "description": "database application showing understanding of database apis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XerzesLegend/DBWebApplication.git"
+  },
+  "author": "Yosif",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/XerzesLegend/DBWebApplication/issues"
+  },
+  "homepage": "https://github.com/XerzesLegend/DBWebApplication#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongoose": "^6.2.7",
+    "nodemon": "^2.0.15"
+  }
+}
