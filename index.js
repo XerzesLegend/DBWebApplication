@@ -1,30 +1,46 @@
-const path = require('path');
- 
 // server
 const express = require('express');
-let app = express();
 const http = require ('http');
-let server = http.createServer(app);
+const mongoose = require('mongoose');
+let app = express();
+const port = 3000;
  
 // database
-const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/test');
-
- 
-// setting up path and port
-const publicPath = path.join(__dirname, '/public');
-const port = process.env.PORT || 3000;
-app.use(express.static(publicPath));
-
-// database handling
 let userModel = require("./models/users");
 console.log(userModel.listAllUsers());
 
 
+// setting server
+app.set("view engine", "ejs");
+app.use(express.urlencoded());
+app.use(express.json());
+ 
+app.get("/form", function(req, res){
+    res.render("form");
+})
+app.get("/users", function(req, res){
+    userModel.listAllUsers().then(function(users){
+        res.render("users", {users: users})
+    }).catch(function(error){
+        res.error("Something went wrong! " + error);
+    });
+})
+app.post("/user", function(req, res){
+    console.log("User: " + JSON.stringify(req.body.user));
+    let newUser = new userModel(req.body.car);
+
+    newUser.save().then(function(){
+        res.send("Added new user to database!");
+    }).catch(function(error){
+        res.err("Failed to add new user to database!");
+    });
+})
 
 
 
-server.listen(port, () => {
+
+app.listen(port, () => {
     console.log(`Listening on port ${port}`);
 });
 
