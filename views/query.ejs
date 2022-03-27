@@ -1,0 +1,22 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <%- include("./partials/header") %>
+        <h1>Choose a query condition:</h1>
+        <form method="post" action="/queryResult">
+            <select name="query[selection]" id="criteria">
+                <option value="age">Age</option>
+            </select>
+            <select name="query[condition]" id="condition">
+                <option value="gt">Greater Than</option>
+                <option value="lt">Less Than</option>
+                <option value="et">Equal To</option>
+            </select>
+            <input type="text" name="query[number]"><br>
+            <input type="submit" value="Submit">
+        </form>       
+    </body>
+
+</html>

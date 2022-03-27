@@ -1,0 +1,12 @@
+
+.headerContainer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 80%;
+    margin: 8% auto 0 auto;
+    flex-wrap: wrap;
+}
+.headerContainer a{
+    margin: 0 32px 0 32px;
+}

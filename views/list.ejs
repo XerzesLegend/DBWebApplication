@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Users</title>
+    </head>
+    <body>
+        <%- include("./partials/header") %>
+        <% let monthNames = [“January”, “February”, “March”, “April”, “May”, “June”, “July”, “August”, “September”, “October”, “November”, “December”] %>
+        <h1>Users:</h1>
+        <ul>
+            <% for(user of users) { %>
+                <li>
+                    <ul>
+                        <li><%= user.name %></li>
+                        <li><%= user.age %></li>
+                        <li><%= user.major %></li>
+                        <% let d = user.date.getDate() %>
+                        <% let m = monthNames[user.date.getMonth()] %>
+                        <% let y = user.date.getFullYear() %>
+                        <li><%= m + ' ' + d + ' ' + y %></li>
+                    </ul>
+                </li>
+            <% } %>
+        </ul>
+    </body>
+
+</html>

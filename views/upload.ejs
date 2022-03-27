@@ -1,0 +1,17 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <%- include("./partials/header") %>
+        <h1>Add Student:</h1>
+        <form method="post" action="/allUsers">
+            Name: <input type="text" name="user[name]"><br>
+            Age: <input type="number" name="user[age]"><br>
+            Major: <input type="text" name="user[major]"><br>
+            Graduation Date: <input type="date" name="user[date]"><br>
+            <input type="submit" value="Submit">
+        </form>       
+    </body>
+
+</html>
