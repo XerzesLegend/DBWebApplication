@@ -1,11 +1,12 @@
 <html>
     <head>
-
+        <title>Upload User</title>
+        <%- include("./partials/headTags") %>
     </head>
     <body>
         <%- include("./partials/header") %>
         <h1>Add Student:</h1>
-        <form method="post" action="/allUsers">
+        <form method="post" action="/addUser">
             Name: <input type="text" name="user[name]"><br>
             Age: <input type="number" name="user[age]"><br>
             Major: <input type="text" name="user[major]"><br>
